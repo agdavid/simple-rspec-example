@@ -46,14 +46,13 @@ describe "Library object" do
     end
 
     describe "#add_book" do
-        before (:each) do 
-            original_book_count = Book.all.count
+        it "should create an instance of Book" do
+            original_book_count = @lib.books.count
             new_book = Book.new("Designing for the Web", "Mark Boulton", :design)
             @lib.add_book(new_book)
-            new_book_count = Book.all.count
-        end 
-        it "should create an instance of Book" do
-            expect(original_book_count - new_book_count).to eq(1)
+            new_book_count = @lib.books.count
+
+            expect(new_book_count - original_book_count).to eq(1)
             expect(@lib.get_book("Designing for the Web")).to be_an_instance_of(Book)
         end
     end

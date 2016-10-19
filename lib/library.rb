@@ -8,9 +8,19 @@ class Library
   end
 
   def get_books_in_category(category)
+      self.books.select do |book|
+          book.category == category
+      end
+  end
+
+  def add_book(book)
+      self.books.push(book)
+  end
+
+  def get_book(title)
     self.books.select do |book|
-      book.category == category
-    end
+        book.title == title
+    end.first
   end
 
 end
