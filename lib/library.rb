@@ -26,7 +26,7 @@ class Library
   def save(lib_file=false)
     @lib_file = lib_file || @lib_file || "library.yaml"
     File.open @lib_file, "w" do |f|
-        f.write YAML::dump @books
+        f.write YAML::dump self.books
     end
   end
 
