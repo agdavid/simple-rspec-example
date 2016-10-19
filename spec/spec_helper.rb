@@ -1,4 +1,4 @@
-require_relative '../library'
-require_relative '../book'
+require_relative '../lib/library'
+require_relative '../lib/book'
 
 require 'yaml'
