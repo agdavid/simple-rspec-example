@@ -4,7 +4,9 @@ class StringCalculator
       if input.empty?
           0
       else
-          input.to_i
+          numbers = input.split(',').collect{ |number| number.to_i }
+          # numbers.inject(0){ |sum, number| sum + number }
+          numbers.inject(:+)
       end
   end
 
