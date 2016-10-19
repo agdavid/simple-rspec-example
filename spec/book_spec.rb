@@ -12,4 +12,22 @@ describe Book do
         end
     end
 
+    describe "#title" do 
+        it "returns the correct title" do
+            expect(@book.title).to eq("Title")
+        end
+    end
+
+    describe "#author" do 
+        it "returns the correct author" do 
+            expect(@book.author).to eq("Author")
+        end
+    end
+
+    describe "#category" do 
+        it "returns the correct category" do 
+            expect(@book.category).to eq(:category)
+        end
+    end
+
 end
